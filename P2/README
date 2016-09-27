@@ -1,0 +1,56 @@
+Member 1:
+NAME: Zhenda Lu   CSlogin: zhenda WISCid: 9071579214 
+Member 2:
+NAME: Renjie Tang CSlogin: renjie WISCid: 9071939533
+Member 3:
+NAME: Yizhe Qu    CSlogin: qu     WISCid: 9069972413
+
+
+
+
+
+About the JDBC:
+
+I do not know how to make a executable file for JDBC. According to the piazza, I can just submit my java file.
+
+
+Here is how I compile it: 
+
+1. Download postgresql-8.4-703.jdbc4.jar
+
+2. Create login.config be like
+
+	pgjdbc {
+	com.sun.security.auth.module.Krb5LoginModule required useTicketCache=true
+	debug=true;
+	};
+
+3. Put them together with my java file JDBCSampling.java.
+
+4. Use given command to set path and classpath in terminal:
+
+	export CLASSPATH=postgresql-8.4-703.jdbc4.jar:.
+	export PATH=//usr/lib/jvm/java-1.7.0/bin:$PATH
+	alias javasec='java -Djava.security.auth.login.config=login.config'
+
+5. Compile it by command:
+	javac JDBCSampling.java
+
+6. Run it by command:
+	javasec JDBCSampling
+
+
+Clarification for the first prompt:
+
+"Enter the table name or specific query for sampling:
+(You can also use query other than select)"
+
+If you type tablename or select, it will continue do the sampling.
+If you type other query, it will execute and loop back.
+
+
+We also assume following:
+1. User will input all query in one single line.
+2. User will use non-existed table name when he store the sample back to database. 
+
+

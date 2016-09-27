@@ -1,0 +1,7 @@
+We use java to decompose the relation.
+Simply put the java code and csv file under the same directory to run.
+
+For evevery line we read in:
+1. Use String.split(",") to separate data by comma.
+2. Use hashset which stores the keys to avoid duplication.
+3. Write specific column(by the index of String array which returned by split) to the four new files(relations).
